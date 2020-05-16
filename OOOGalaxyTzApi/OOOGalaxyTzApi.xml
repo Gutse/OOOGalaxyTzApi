@@ -1,0 +1,301 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OOOGalaxyTzApi</name>
+    </assembly>
+    <members>
+        <member name="T:OOOGalaxyTzApi.Auth.AuthOptions">
+            <summary>
+            Настройки генерации токенов
+            </summary>
+        </member>
+        <member name="F:OOOGalaxyTzApi.Auth.AuthOptions.Issuer">
+            <summary>
+            Издатель токена
+            </summary>
+        </member>
+        <member name="F:OOOGalaxyTzApi.Auth.AuthOptions.Audience">
+            <summary>
+            Потребитель токена
+            </summary>
+        </member>
+        <member name="F:OOOGalaxyTzApi.Auth.AuthOptions.Lifetime">
+            <summary>
+            Время жизни токена
+            </summary>
+        </member>
+        <member name="F:OOOGalaxyTzApi.Auth.AuthOptions.Key">
+            <summary>
+            Ключ
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Auth.AuthOptions.GetSymmetricSecurityKey">
+            <summary>
+            GetKey
+            </summary>
+        </member>
+        <member name="T:OOOGalaxyTzApi.Controllers.AuthenticationController">
+            <inheritdoc />
+            <summary>
+            Контроллер аутентификации
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.AuthenticationController.#ctor(AutoMapper.IMapper,OOOGalaxyTzApi.Interfaces.IRepository{OOOGalaxyTzApi.Models.UserModel},OOOGalaxyTzApi.Interfaces.IPasswordHelper)">
+            <inheritdoc />
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.AuthenticationController.Login(System.String,System.String)">
+            <summary>
+            Аутентификация пользователя
+            </summary>
+            <param name="login">Логин пользователя</param>
+            <param name="password">Пароль пользователя</param>
+            <response code="200">Результат залогинивания</response>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.AuthenticationController.PopulateTestLogins">
+            <summary>
+            создание пользователя admin/admin
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.AuthenticationController.GetCurrentUser">
+            <summary>
+            просмотр информации о текущем пользователе
+            </summary>
+        </member>
+        <member name="T:OOOGalaxyTzApi.Controllers.BaseController">
+            <inheritdoc />
+            <summary>
+            Базовый контроллер
+            </summary>
+        </member>
+        <member name="F:OOOGalaxyTzApi.Controllers.BaseController.Mapper">
+            <summary>
+            Инстанс автомаппера
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BaseController.#ctor(AutoMapper.IMapper)">
+            <summary>
+            Конструктор
+            </summary>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BaseController.Ok``1(``0)">
+            <summary>
+            Конструктор стандартного ответа апи
+            </summary>
+            <param name="sourceObject"></param>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BaseController.Ok``1(System.Object,System.Int32)">
+            <summary>
+            Конструктор стандартного ответа апи
+            </summary>
+            <param name="sourceObject"></param>
+            <param name="dataCount"></param>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BaseController.BadRequest``1(``0,System.Net.HttpStatusCode)">
+            <summary>
+            Отправка ошибки
+            </summary>
+            <param name="error"></param>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BaseController.BadRequest(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="T:OOOGalaxyTzApi.Controllers.BrokenController">
+            <inheritdoc />
+            <summary>
+            Контроллер аутентификации
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BrokenController.#ctor(AutoMapper.IMapper,OOOGalaxyTzApi.Interfaces.IRepository{OOOGalaxyTzApi.Models.UserModel})">
+            <inheritdoc />
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BrokenController.Unhandled">
+            <summary>
+            3. endpoint который ломается во время работы и возвращает unhandled exception
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Controllers.BrokenController.Handled">
+            <summary>
+            endpoint который ломается во время работы и возвращает логическую ошибку (например запрашиваемый пользователь не активирован)
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.DTO.BaseDto.IsNew">
+            <summary>
+            Объект имеет Id == 0, значит не сохранен в БД. 
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.DTO.UserDto.Login">
+            <summary>
+            Логин
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.DTO.UserDto.Email">
+            <summary>
+            Почта
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.DTO.UserDto.BirthDate">
+            <summary>
+            Дата рождения
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.DTO.UserDto.Amount">
+            <summary>
+            Какое то количество
+            </summary>
+        </member>
+        <member name="T:OOOGalaxyTzApi.Extensions.ObjectExtensions">
+            <summary>
+            Extensions for Object
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Extensions.ObjectExtensions.MapToListOf``1(System.Object,AutoMapper.IMapper)">
+            <summary>
+            Смаппить в List
+            </summary>
+            <param name="data"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Extensions.ObjectExtensions.MapTo``1(System.Object,AutoMapper.IMapper)">
+            <summary>
+            Смаппить в T
+            </summary>
+            <param name="data"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Interfaces.IRepository`1.GetById(System.Nullable{System.Int32})">
+            <summary>
+            Получение экземпляра сущности Т по Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Interfaces.IRepository`1.GetByIdAsync(System.Nullable{System.Int32})">
+            <summary>
+            Асинхронное получение экземпляра сущности Т по Id
+            </summary>
+            <param name="id">Id сущности</param>
+            <returns></returns>
+        </member>
+        <member name="T:OOOGalaxyTzApi.Middlewares.CloseSessionMiddleware">
+            <summary>
+            Прослойка закрывающая сессию Nhibernate
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Middlewares.CloseSessionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Прослойка закрывающая сессию Nhibernate
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Middlewares.CloseSessionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,NHibernate.ISession)">
+            <summary>
+            Pipeline
+            </summary>
+            <param name="context"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OOOGalaxyTzApi.Middlewares.ExceptionMiddleware">
+            <summary>
+            Прослойка перехватывающая ошибки
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Middlewares.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Прослойка перехватывающая ошибки
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Middlewares.ExceptionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Pipeline
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.ApiResponse`1.Code">
+            <summary>
+            Код ответа
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.ApiResponse`1.Success">
+            <summary>
+            Был ли запрос успешен (200)
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.ApiResponse`1.Message">
+            <summary>
+            Сообщение (в случае ошибки)
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.ApiResponse`1.Data">
+            <summary>
+            Данные
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.ApiResponse`1.DataCount">
+            <summary>
+            Количество записей
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.ApiResponse`1.RawJson">
+            <summary>
+            Сырой Json ответ.
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.UserModel.Login">
+            <summary>
+            Логин
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.UserModel.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.UserModel.Salt">
+            <summary>
+            Соль
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.UserModel.Email">
+            <summary>
+            Почта
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.UserModel.BirthDate">
+            <summary>
+            Дата рождения
+            </summary>
+        </member>
+        <member name="P:OOOGalaxyTzApi.Models.UserModel.Amount">
+            <summary>
+            Какое то количество
+            </summary>
+        </member>
+        <member name="T:OOOGalaxyTzApi.Swagger.SwaggerServiceExtensions">
+            <summary>
+            SwaggerServiceExtensions
+            </summary>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Swagger.SwaggerServiceExtensions.AddSwaggerDocumentation(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Добавление и конфигурация необходимых сервисов
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OOOGalaxyTzApi.Swagger.SwaggerServiceExtensions.UseSwaggerDocumentation(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Настройка
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
